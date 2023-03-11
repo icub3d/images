@@ -1,0 +1,21 @@
+networks:
+  images:
+volumes:
+  mongo-data:
+services:
+  mongo:
+    networks:
+      - images
+    image: mongo:5
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+  images:
+    networks:
+      - images
+    image: marshians/images:latest
+    environment:
+      - "IMAGES_URI=mongodb://mongo:27017/"
+    ports:
+      - "8000:8000"
