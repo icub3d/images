@@ -10,15 +10,16 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v3
       
-      - name: Log in to Docker Hub
-        uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      - name: Log in to Marshians Docker Registry
+        uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKER_HUB_USERNAME }}
-          password: ${{ secrets.DOCKER_HUB_TOKEN }}
+          registry: cr.marsh.gg
+          username: ${{ secrets.CR_USERNAME }}
+          password: ${{ secrets.CR_PASSWORD }}
       
       - name: Build and Push Docker image
-        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: marshians/images:latest
+          tags: cr.marsh.gg/marshians/images:latest

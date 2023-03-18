@@ -1,2 +1,2 @@
 build:
-	docker build -t marshians/images .
+	docker build -t cr.marsh.gg/marshians/images .
