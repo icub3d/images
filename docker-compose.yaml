@@ -14,7 +14,7 @@ services:
   images:
     networks:
       - images
-    image: cr.marsh.gg/marshians/images:latest
+    image: ghcr.io/icub3d/images:latest
     environment:
       - "IMAGES_URI=mongodb://mongo:27017/"
     ports:

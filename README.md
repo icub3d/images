@@ -1,3 +1,3 @@
-# Marshian's Images
+# Images
 
-A simple web app to keep track of family memes.
+A simple web app to keep track of memes.

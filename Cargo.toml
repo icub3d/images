@@ -1,7 +1,7 @@
 [package]
 name = "images"
 version = "0.1.0"
-authors = ["Joshua Marsh (icub3d) <joshua@themarshians.com>"]
+authors = ["Joshua Marsh (icub3d) <joshua.marshian@gmail.com>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

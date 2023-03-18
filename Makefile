@@ -1,2 +1,2 @@
 build:
-	docker build -t cr.marsh.gg/marshians/images .
+	docker build -t ghcr.io/icub3d/images .

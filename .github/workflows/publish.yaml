@@ -4,22 +4,22 @@ on:
   push:
 jobs:
   push_to_registry:
-    name: Push Docker image to Docker Hub
+    name: Push Image to ghcr.io
     runs-on: ubuntu-latest
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
       
-      - name: Log in to Marshians Docker Registry
+      - name: Log in to ghcr.io
         uses: docker/login-action@v2
         with:
-          registry: cr.marsh.gg
-          username: ${{ secrets.CR_USERNAME }}
-          password: ${{ secrets.CR_PASSWORD }}
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Build and Push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           push: true
-          tags: cr.marsh.gg/marshians/images:latest
+          tags: ghcr.io/icub3d/images:latest
